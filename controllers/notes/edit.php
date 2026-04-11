@@ -1,9 +1,9 @@
 <?php
 
-$config = require ("config.php");
-$db = new Database($config['database']);
+use Core\App;
+use Core\Database;
 
-$heading = "Notes";
+$db = App::resolve(Database::class);
 $currentUserId = 1;
 
 $note = $db->query("SELECT * FROM notes WHERE id = :id", [
@@ -12,4 +12,8 @@ $note = $db->query("SELECT * FROM notes WHERE id = :id", [
 
 authorize($note['user_id'] === $currentUserId);
 
-require "./views/note.view.php";
+view("notes/edit.view.php", [
+    'heading' => "Edit Note",
+    'errors' => [],
+    'note' => $note
+]);
