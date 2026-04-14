@@ -1,6 +1,8 @@
 <?php
 
 use Core\Response;
+use Core\Session;
+
 function dd($data){
     echo "<pre>";
     var_dump($data);
@@ -34,4 +36,8 @@ function view($path, $attributes = []) {
 function redirect($path) {
     header("Location: {$path}");
     exit();
+}
+
+function old($key, $default = ''){
+    return Session::get('old')[$key]?? $default;
 }
