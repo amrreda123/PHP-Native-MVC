@@ -2,8 +2,24 @@
     "name": "casper/mvc",
     "authors": [
         {
-            "name": "Amr Reda"
+            "name": "Elhandaza"
         }
     ],
-    "require": {}
+    "require": {
+        "illuminate/collections": "^13.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Core\\": "Core/",
+            "Http\\": "Http/"
+        }
+    },
+    "require-dev": {
+        "pestphp/pest": "^4.6"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
 }
