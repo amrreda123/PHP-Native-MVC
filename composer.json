@@ -1,0 +1,9 @@
+{
+    "name": "casper/mvc",
+    "authors": [
+        {
+            "name": "Amr Reda"
+        }
+    ],
+    "require": {}
+}
